@@ -1,22 +1,12 @@
-<!doctype html>
+<?php
+    $pageTitle = 'Staff Menu';
+    require_once('../../private/initialize.php');
+    require_once(SHARED_PATH . '/staff_header.php');
+?>
+    <div id="content">
 
-<html lang="en">
-<head>
-    <title>GBI</title>
-    <meta charset="utf-8">
-</head>
+    </div>
 
-<body>
-    <header>
-        <h1>GBI Staff Area</h1>
-    </header>
-    <navigation>
-        <ul>
-            <li><a href="index.php">Menu</a></li>
-        </ul>
-    </navigation>
-    <footer>
-        &copy; <?php echo date('Y') ?> Globe Bank
-    </footer>
-</body>
-</html>
+<?php require_once(SHARED_PATH . '/staff_footer.php'); ?>
+
+
