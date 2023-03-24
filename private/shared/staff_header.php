@@ -3,9 +3,9 @@
 
 <html lang="en">
 <head>
-    <title>GBI - <?php echo (!isset($pageTitle) ? 'Staff Area' : $pageTitle); ?></title>
+    <title>GBI - <?php echo (!isset($pageTitle) ? 'Staff Area' : htmlspecialchars(urlencode($pageTitle))); ?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="../stylesheets/staff.css"
+    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/staff.css') ?>" />
 </head>
 
 <body>
@@ -14,6 +14,6 @@
 </header>
 <navigation>
     <ul>
-        <li><a href="index.php">Menu</a></li>
+        <li><a href= "<?php echo url_for('/staff/index.php') ?>">Menu</a></li>
     </ul>
 </navigation>
