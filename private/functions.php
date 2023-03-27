@@ -1,5 +1,10 @@
 <?php
-    function url_for($scriptPath) : String
+
+    /**
+     * @param $scriptPath
+     * @return string
+     */
+    function url_for(string $scriptPath) : string
     {
         if($scriptPath[0] !== '/')
         {
@@ -9,18 +14,42 @@
         return WWW_ROOT . $scriptPath;
     }
 
-    function error_404(){
+    /**
+     * @return void
+     */
+    function error_404():void{
         header($_SERVER["SERVER_PROTOCOL"] . " 404 NOT FOUND");
         exit();
     }
 
-    function error_500(){
+    /**
+     * @return void
+     */
+    function error_500():void{
         header($_SERVER["SERVER_PROTOCOL"] . " 500 Internal Server Error");
         exit();
     }
 
-    function redirectTo($location){
+    /**
+     * @param string $location
+     * @return void
+     */
+    function redirectTo(string $location):void{
         header('Location: ' . url_for($location));
         exit;
+    }
+
+    /**
+     * @return bool
+     */
+    function requestIsPost(): bool{
+        return $_SERVER['REQUEST_METHOD'] == 'POST';
+    }
+
+    /**
+     * @return bool
+     */
+    function requestIsGet(): bool{
+        return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
 
